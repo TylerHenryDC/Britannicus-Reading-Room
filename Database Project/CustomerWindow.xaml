@@ -1,0 +1,22 @@
+﻿<Window x:Class="Database_Project.CustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database_Project"
+        mc:Ignorable="d"
+        Title="CustomerWindow" Height="450" Width="400">
+    <Grid>
+        <Button x:Name="editCustButton" Content="Edit" HorizontalAlignment="Left" Margin="27,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="editCustButton_Click"/>
+        <Button x:Name="addCustButton" Content="Add Customer" HorizontalAlignment="Left" Margin="273,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="addCustButton_Click"/>
+        <Button x:Name="viewColButton" Content="View Collection" HorizontalAlignment="Center" Margin="0,358,0,0" VerticalAlignment="Top" Height="47" Width="92" Click="viewColButton_Click"/>
+        <Label Content="Enter Customer Email:" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="158,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Customer ID:" HorizontalAlignment="Left" Margin="45,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Email:" HorizontalAlignment="Left" Margin="45,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Phone:" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Customer Address:" HorizontalAlignment="Left" Margin="31,248,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

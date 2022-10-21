@@ -1,0 +1,30 @@
+﻿<Window x:Class="Database_Project.CustomerCollectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database_Project"
+        mc:Ignorable="d"
+        Title="CustomerCollectionWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid>
+                <Grid>
+
+                    <Grid Background="#FFE5E5E5">
+                        <Button Content="Button" HorizontalAlignment="Left" Margin="706,39,0,0" VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Left" Margin="586,41,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Search:" HorizontalAlignment="Left" Margin="533,37,0,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="sortCombobox" HorizontalAlignment="Left" Margin="126,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+                        <Label Content="Sort:" HorizontalAlignment="Left" Margin="75,37,0,0" VerticalAlignment="Top"/>
+                        <DataGrid Margin="0,68,0,39"/>
+                        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="688,400,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="editButton_Click"/>
+                        <Button x:Name="addButton" Content="Add New" HorizontalAlignment="Left" Margin="56,399,0,0" VerticalAlignment="Top" Height="34" Width="73" Click="addButton_Click"/>
+                    </Grid>
+
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
