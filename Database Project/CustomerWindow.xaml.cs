@@ -29,6 +29,11 @@ namespace Database_Project
             CustomerEditWindow ce = new CustomerEditWindow();
             ce.ShowDialog();
         }
+        private void searchCustButton_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerEditWindow ce = new CustomerEditWindow();
+            ce.ShowDialog();
+        }
 
         private void viewColButton_Click(object sender, RoutedEventArgs e)
         {

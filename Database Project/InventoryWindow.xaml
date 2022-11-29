@@ -14,7 +14,7 @@
         <Label Content="Search:" HorizontalAlignment="Left" Margin="533,37,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="126,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
         <Label Content="Sort:" HorizontalAlignment="Left" Margin="75,37,0,0" VerticalAlignment="Top"/>
-        <DataGrid Margin="0,68,0,39"/>
+        <DataGrid x:Name="inventoryDataGrid"  Margin="0,68,0,39" SelectionChanged="inventoryDataGrid_SelectionChanged"/>
         <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="688,398,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="editButton_Click"/>
         <Button x:Name="addButton" Content="Add New" HorizontalAlignment="Left" Margin="56,398,0,0" VerticalAlignment="Top" Height="34" Width="73" Click="addButton_Click"/>
     </Grid>
