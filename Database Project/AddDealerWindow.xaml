@@ -7,22 +7,18 @@
         mc:Ignorable="d"
         Title="AddDealerWindow" Height="325" Width="340">
     <Grid>
-        <Grid>
+        <Grid Margin="0,0,-52,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="22*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Dealer Name:" HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top"/>
-            <Label Content="Dealer Buissness:" HorizontalAlignment="Left" Margin="34,80,0,0" VerticalAlignment="Top"/>
-            <Label Content="Dealer Phone:" HorizontalAlignment="Left" Margin="29,111,0,0" VerticalAlignment="Top"/>
-            <Label Content="Dealer Email:" HorizontalAlignment="Left" Margin="20,142,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="171,53,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Margin="171,146,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Margin="171,115,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Margin="171,84,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="confirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" Height="44" Width="70"/>
+            <Label Content="Dealer Business Title:" HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top"/>
+
+            <TextBox x:Name="businessTitleUser" HorizontalAlignment="Left" Margin="171,53,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+            <Button x:Name="confirmButton" Content="Submit" HorizontalAlignment="Left" Margin="93,210,0,0" VerticalAlignment="Top" Height="44" Width="70" Click="SubmitName"/>
             <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="221,210,0,0" VerticalAlignment="Top" Height="44" Width="70" Click="cancelButton_Click"/>
-            <Button x:Name="addProductButton" Content="Add Product" HorizontalAlignment="Left" Margin="135,210,0,0" VerticalAlignment="Top" Height="44" Width="70" Click="addProductButton_Click"/>
+
 
         </Grid>
     </Grid>

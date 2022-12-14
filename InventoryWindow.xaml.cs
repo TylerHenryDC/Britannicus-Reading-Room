@@ -37,7 +37,7 @@ namespace Database_Project
         private void DisplayInv()
         {
            
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC Inventory_Basic", dbConnection);          
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -96,11 +96,6 @@ namespace Database_Project
               //  string Quantity = row.Cells[1].ToString();
                 //...
             }
-        }
-
-        private void refreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayInv();
         }
     }
 }

@@ -12,15 +12,15 @@
             <Label Content="Description" HorizontalAlignment="Left" Margin="34,80,0,0" VerticalAlignment="Top"/>
             <Label Content="Type:" HorizontalAlignment="Left" Margin="29,111,0,0" VerticalAlignment="Top"/>
             <Label Content="Condition:" HorizontalAlignment="Left" Margin="20,142,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name = "titleItem" HorizontalAlignment="Left" Margin="171,53,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name ="titleCondition" HorizontalAlignment="Left" Margin="171,146,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name = "titleType" HorizontalAlignment="Left" Margin="171,115,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name = "titleDescription" HorizontalAlignment="Left" Margin="171,84,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="confirmButton1" Content="Confirm" HorizontalAlignment="Left" Margin="34,261,0,0" VerticalAlignment="Top" Click="Button_Confirm" Height="44" Width="70"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,53,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,146,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,115,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,84,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="confirmButton1" Content="Confirm" HorizontalAlignment="Left" Margin="34,261,0,0" VerticalAlignment="Top" Click="Button_Click" Height="44" Width="70"/>
             <Button x:Name="cancelButton1" Content="Cancel" HorizontalAlignment="Left" Margin="196,261,0,0" VerticalAlignment="Top" Click="Button_Click" Height="44" Width="70"/>
             <Label Content="ISBN" HorizontalAlignment="Left" Margin="29,200,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name ="titlePrice" HorizontalAlignment="Left" Margin="171,177,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name = "titleISBN" HorizontalAlignment="Left" Margin="171,204,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,177,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="171,204,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label Content="Price" HorizontalAlignment="Left" Margin="31,177,0,0" VerticalAlignment="Top"/>
 
         </Grid>

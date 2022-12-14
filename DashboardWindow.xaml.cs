@@ -48,9 +48,7 @@ namespace Database_Project
         private void dealerButton_Click(object sender, RoutedEventArgs e)
         {
             DealerWindow dw = new DealerWindow();
-            
             dw.ShowDialog();
-
         }
     }
 }

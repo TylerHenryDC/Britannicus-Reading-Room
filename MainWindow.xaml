@@ -1,0 +1,17 @@
+﻿<Window x:Class="Database_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="246" Width="468">
+    <Grid>
+        <Label x:Name="userLabel" Content="Username:&#xD;&#xA;" HorizontalAlignment="Left" Margin="87,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="userTextBox" HorizontalAlignment="Left" Margin="158,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197"/>
+        <Label x:Name="passwordLabel"  Content="Password:" HorizontalAlignment="Left" Margin="89,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="158,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="197"/>
+        <Button x:Name="logInButton"  Content="Log In" HorizontalAlignment="Left" Margin="58,148,0,0" VerticalAlignment="Top" Height="47" Width="93" Click="logInButton_Click"/>
+        <Button x:Name="closeButton" Content="Close" HorizontalAlignment="Left" Margin="323,148,0,0" VerticalAlignment="Top" Height="47" Width="93" Click="closeButton_Click"/>
+    </Grid>
+</Window>

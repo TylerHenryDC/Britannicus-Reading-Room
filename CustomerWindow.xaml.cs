@@ -35,8 +35,7 @@ namespace Database_Project
 
         private void searchCustButton_Click(object sender, RoutedEventArgs e)
         {
-
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("Customer_Dashboard", dbConnection);
             command.CommandType = System.Data.CommandType.StoredProcedure;

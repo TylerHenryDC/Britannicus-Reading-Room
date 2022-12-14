@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="CustomerWindow" Height="450" Width="400">
-    <Grid Margin="0,0,-94,-16">
+    <Grid>
         <Button x:Name="editCustButton" Content="Edit" HorizontalAlignment="Left" Margin="27,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="editCustButton_Click"/>
         <Button x:Name="addCustButton" Content="Add Customer" HorizontalAlignment="Left" Margin="273,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="addCustButton_Click"/>
-        <Button x:Name="viewColButton" Content="View Collection" HorizontalAlignment="Left" Margin="158,358,0,0" VerticalAlignment="Top" Height="47" Width="92" Click="viewColButton_Click"/>
+        <Button x:Name="viewColButton" Content="View Collection" HorizontalAlignment="Center" Margin="0,358,0,0" VerticalAlignment="Top" Height="47" Width="92" Click="viewColButton_Click"/>
         <Label Content="Enter Customer Email:" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="custEmailTextBox" HorizontalAlignment="Left" Margin="158,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="custEmailTextBox" HorizontalAlignment="Left" Margin="158,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Customer ID:" HorizontalAlignment="Left" Margin="36,81,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Email:" HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Phone:" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center"/>
         <Label Content="Customer Address:" HorizontalAlignment="Left" Margin="36,249,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="searchCustButton" Content="Search" HorizontalAlignment="Left" Margin="336,14,0,0" VerticalAlignment="Top" Height="22" Width="54" Click="searchCustButton_Click"/>
+        <Button x:Name="searchCustButton" Content="Search" HorizontalAlignment="Left" Margin="292,12,0,0" VerticalAlignment="Top" Height="22" Width="54" Click="searchCustButton_Click"/>
         <Label x:Name="custIDLabel" Content="" HorizontalAlignment="Left" Margin="162,81,0,0" VerticalAlignment="Top"/>
         <Label x:Name="custNameLabel" Content="" HorizontalAlignment="Left" Margin="162,130,0,0" VerticalAlignment="Top"/>
         <Label x:Name="custEmailLabel" Content="" HorizontalAlignment="Left" Margin="162,173,0,0" VerticalAlignment="Top"/>

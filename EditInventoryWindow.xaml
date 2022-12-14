@@ -1,0 +1,20 @@
+﻿<Window x:Class="Database_Project.EditInventoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database_Project"
+        mc:Ignorable="d"
+        Title="EditInventoryWindow" Height="150" Width="400">
+    <Grid>
+        <Label Content="Please Enter In The Quantity For INV:" HorizontalAlignment="Left" Margin="37,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="Condition:" HorizontalAlignment="Left" Margin="177,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Quantity:" HorizontalAlignment="Left" Margin="184,67,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Margin="258,71,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="22"/>
+        <Label x:Name="invIDLabel" Content="" HorizontalAlignment="Left" Margin="264,15,0,0" VerticalAlignment="Top" Width="93"/>
+        <Label x:Name ="conditionLabel" Content="" HorizontalAlignment="Left" Margin="258,41,0,0" VerticalAlignment="Top" Width="132"/>
+        <Button x:Name="confirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="67,97,0,0" VerticalAlignment="Top" Height="31" Width="72" Click="confirmButton_Click"/>
+        <Button x:Name ="closeButton" Content="Close" HorizontalAlignment="Left" Margin="264,97,0,0" VerticalAlignment="Top" Height="31" Width="72" Click="closeButton_Click"/>
+
+    </Grid>
+</Window>

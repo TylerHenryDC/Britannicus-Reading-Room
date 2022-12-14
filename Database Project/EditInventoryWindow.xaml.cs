@@ -17,33 +17,42 @@ using System.Windows.Shapes;
 namespace Database_Project
 {
     /// <summary>
-    /// Interaction logic for CustomerCollectionWindow.xaml
+    /// Interaction logic for EditInventoryWindow.xaml
     /// </summary>
-    public partial class CustomerCollectionWindow : Window
+    public partial class EditInventoryWindow : Window
     {
-        public CustomerCollectionWindow(string custID)
+        public EditInventoryWindow(string invID, string condition, string quantity)
         {
             InitializeComponent();
-            
-            showCollection(custID);
+
+            invIDLabel.Content = invID;
+            conditionLabel.Content = condition;
+            quantityTextBox.Text = quantity;
+
         }
 
-        private void showCollection(string custID)
+        private void closeButton_Click(object sender, RoutedEventArgs e)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
+            Close();
+        }
+
+        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
-            SqlCommand command = new SqlCommand("Customer_Collection", dbConnection);
+            SqlCommand command = new SqlCommand("Quantity_Update", dbConnection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@ID", custID);
+            command.Parameters.AddWithValue("@ID", invIDLabel.Content);
+            command.Parameters.AddWithValue("@Quantity", quantityTextBox.Text); 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-            DataTable collectionTable = new DataTable();
 
             // Try to connect to the database, and use the adapter to fill the table
             try
             {
                 dbConnection.Open();
-                adapter.Fill(collectionTable);
+                command.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
@@ -55,26 +64,9 @@ namespace Database_Project
             {
                 adapter.Dispose();
                 dbConnection.Close();
+
             }
-
-            customerCollectionDataGrid.ItemsSource = collectionTable.DefaultView;
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void addButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow ab = new AddBookWindow();
-            ab.ShowDialog();
-        }
-
-        private void editButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow ab = new AddBookWindow();
-            ab.ShowDialog();
+            Close();
         }
     }
 }
