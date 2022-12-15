@@ -15,7 +15,6 @@
         <Label Content="Customer ID:" HorizontalAlignment="Left" Margin="36,81,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Email:" HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top"/>
-        <Label Content="Customer Phone:" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center"/>
         <Label Content="Customer Address:" HorizontalAlignment="Left" Margin="36,249,0,0" VerticalAlignment="Top"/>
         <Button x:Name="searchCustButton" Content="Search" HorizontalAlignment="Left" Margin="336,14,0,0" VerticalAlignment="Top" Height="22" Width="54" Click="searchCustButton_Click"/>
         <Label x:Name="custIDLabel" Content="" HorizontalAlignment="Left" Margin="162,81,0,0" VerticalAlignment="Top"/>

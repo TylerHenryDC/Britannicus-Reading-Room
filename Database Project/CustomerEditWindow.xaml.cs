@@ -21,9 +21,15 @@ namespace Database_Project
     /// </summary>
     public partial class CustomerEditWindow : Window
     {
+        //Global Variables
         bool update = false;
         string email = "";
         string ID = "";
+        string error = "";
+        bool valid = true;
+
+
+        //On load, adds customer data if edit was chosen
         public CustomerEditWindow(string custEmail, string custID)
         {
             InitializeComponent();
@@ -81,20 +87,78 @@ namespace Database_Project
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (update == true)
+            CheckValid();
+            if (valid == true)
             {
-                CustomerUpdate();
-            }
-            else if (update == false)
-            {
-                CustomerAdd();
-            }
-            Close();
-            
+                if (update == true)
+                {
+                    CustomerUpdate();
+                }
+                else if (update == false)
+                {
+                    CustomerAdd();
+                }
 
+                Close();
+            }
+            else
+            {
+                MessageBox.Show(error, "Error");
+            }
             
         }
 
+        private void CheckValid()
+        {
+            valid = true;
+            error = "";
+            if(firstNameTextBox.Text == "")
+            {
+                error += "\nFirst Name Cannot Be Empty";               
+            }
+            if (lastNameTextBox.Text == "")
+            {
+                error += "\nLast Name Cannot Be Empty";
+            }
+            if (emailNameTextBox.Text == "")
+            {
+                error += "\nEmail Cannot Be Empty";
+            }
+            else
+            {
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
+                SqlConnection dbConnection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand("Customer_Dashboard", dbConnection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Email", emailNameTextBox.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                int EmailExists = (int)command.ExecuteScalar();
+                if(EmailExists > 0)
+                {
+                    error += "\nEmail Already Exists";
+                }
+            }
+            if (addressTextBox.Text == "")
+            {
+                error += "\nAddress Cannot Be Empty";
+            }
+            if (cityTextBox.Text == "")
+            {
+                error += "\nCity Cannot Be Empty";
+            }
+            if (postCodeTextBox.Text == "")
+            {
+                error += "\nPostal Code Cannot Be Empty";
+            }
+            else if(postCodeTextBox.Text.Length != 6)
+            {
+                error += "\nPostal Code Has To Be 6 Characters";
+            }
+            if (error != "")
+            {
+                valid = false;
+            }    
+        }
         private void CustomerUpdate()
         {
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";

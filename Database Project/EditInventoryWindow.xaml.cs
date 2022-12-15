@@ -21,6 +21,8 @@ namespace Database_Project
     /// </summary>
     public partial class EditInventoryWindow : Window
     {
+        bool valid = true;
+        string error = "";
         public EditInventoryWindow(string invID, string condition, string quantity)
         {
             InitializeComponent();
@@ -35,38 +37,53 @@ namespace Database_Project
         {
             Close();
         }
-
+        private void CheckValid()
+        {
+            valid = true;
+            error = "";
+            if (!int.TryParse(quantityTextBox.Text, out int value))
+            {
+                valid = false;
+                error = "Quantity Must Be A Valid Number";
+            }
+        }
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
-            SqlConnection dbConnection = new SqlConnection(connectString);
-            SqlCommand command = new SqlCommand("Quantity_Update", dbConnection);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@ID", invIDLabel.Content);
-            command.Parameters.AddWithValue("@Quantity", quantityTextBox.Text); 
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-
-            // Try to connect to the database, and use the adapter to fill the table
-            try
-            {
-                dbConnection.Open();
-                command.ExecuteNonQuery();
-
+            CheckValid();
+            if (valid == false){
+                MessageBox.Show(error, "Error");
             }
-            catch (Exception ex)
-            {
-                // If there is an error, re-throw the exception to be handled by the presentation tier.
-                // (You could also just do error messaging here but that's not as nice.)
-                throw ex;
-            }
-            finally
-            {
-                adapter.Dispose();
-                dbConnection.Close();
+            else {
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+                SqlConnection dbConnection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand("Quantity_Update", dbConnection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ID", invIDLabel.Content);
+                command.Parameters.AddWithValue("@Quantity", quantityTextBox.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
 
+
+                // Try to connect to the database, and use the adapter to fill the table
+                try
+                {
+                    dbConnection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    // If there is an error, re-throw the exception to be handled by the presentation tier.
+                    // (You could also just do error messaging here but that's not as nice.)
+                    throw ex;
+                }
+                finally
+                {
+                    adapter.Dispose();
+                    dbConnection.Close();
+
+                }
+                Close();
             }
-            Close();
         }
     }
 }

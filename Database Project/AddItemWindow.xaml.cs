@@ -24,6 +24,8 @@ namespace Database_Project
         string msg = "";
         string itemID = "";
         string isbn = "";
+        string error = "";
+        bool valid = true;
         public AddItemWindow(string incISBN)
         {
             InitializeComponent();
@@ -31,48 +33,95 @@ namespace Database_Project
             isbnTextBox.Text = incISBN;
         }
 
+        private void CheckValid()
+        {
+            error = "";
+            valid = true;
+            if (nameTextBox.Text == "")
+            {
+                error += "\nName Cannot Be Empty";
+            }
+            if (barcodeTextBox.Text == "")
+            {
+                error += "\n Barcode Cannot Be Empty";
+            }
+            else if (!int.TryParse(barcodeTextBox.Text, out int value))
+            {
+                valid = false;
+                error = "Barcode Must Only Be Numbers";
+            }
+            if (catagoryComboBox.Text == "")
+            {
+                error += "\nCatagory Cannot Be Empty";
+            }
+            if (priceTextBox.Text == "")
+            {
+                error += "\nPrice Cannot Be Empty";
+            }
+            else if (!double.TryParse(priceTextBox.Text, out double value))
+            {
+                valid = false;
+                error = "Price Must Be A Valid Price";
+            }
+            if (error != "")
+            {
+                valid = false;
+            }
+        }
+
+
+
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
-            SqlConnection dbConnection = new SqlConnection(connectString);
-            SqlCommand command = new SqlCommand("Item_Insert", dbConnection);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@ItemName", nameTextBox.Text);
-            command.Parameters.AddWithValue("@ItemCatID", (catagoryComboBox.SelectedIndex) + 1);
-            command.Parameters.AddWithValue("@ItemDesc", descriptionTextbox.Text);
-            command.Parameters.AddWithValue("@ISBN", isbnTextBox.Text);
-            command.Parameters.AddWithValue("@ItemAuth", authorTextBox.Text);
-            command.Parameters.AddWithValue("@ItemLang", languageTextBox.Text);
-            command.Parameters.AddWithValue("@RetPric", priceTextBox.Text);
-            command.Parameters.AddWithValue("@ItemBar", barcodeTextBox.Text);
-          
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-
-            // Try to connect to the database, and use the adapter to fill the tableItemCon,
-
-            try
+            CheckValid();
+            if (valid == false)
             {
-                dbConnection.Open();
-                command.ExecuteNonQuery();
+                MessageBox.Show(error, "Error");
 
             }
-            catch (Exception ex)
+            else
             {
-                // If there is an error, re-throw the exception to be handled by the presentation tier.
-                // (You could also just do error messaging here but that's not as nice.)
-                throw ex;
-            }
-            finally
-            {
-                adapter.Dispose();
-                dbConnection.Close();
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+                SqlConnection dbConnection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand("Item_Insert", dbConnection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ItemName", nameTextBox.Text);
+                command.Parameters.AddWithValue("@ItemCatID", (catagoryComboBox.SelectedIndex) + 1);
+                command.Parameters.AddWithValue("@ItemDesc", descriptionTextbox.Text);
+                command.Parameters.AddWithValue("@ISBN", isbnTextBox.Text);
+                command.Parameters.AddWithValue("@ItemAuth", authorTextBox.Text);
+                command.Parameters.AddWithValue("@ItemLang", languageTextBox.Text);
+                command.Parameters.AddWithValue("@RetPric", priceTextBox.Text);
+                command.Parameters.AddWithValue("@ItemBar", barcodeTextBox.Text);
 
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+
+                // Try to connect to the database, and use the adapter to fill the tableItemCon,
+
+                try
+                {
+                    dbConnection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    // If there is an error, re-throw the exception to be handled by the presentation tier.
+                    // (You could also just do error messaging here but that's not as nice.)
+                    throw ex;
+                }
+                finally
+                {
+                    adapter.Dispose();
+                    dbConnection.Close();
+
+                }
+                ISBNChecker(isbn);
+                AddInventoryWindow av = new AddInventoryWindow(msg, itemID);
+                av.ShowDialog();
+                Close();
             }
-            ISBNChecker(isbn);
-            AddInventoryWindow av = new AddInventoryWindow(msg, itemID);
-            av.ShowDialog();
-            Close();
         }
 
         private void ISBNChecker(string isbn)
