@@ -97,7 +97,7 @@ namespace Database_Project
             //If valid add item to data base
             else
             {
-                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
                 SqlConnection dbConnection = new SqlConnection(connectString);
                 SqlCommand command = new SqlCommand("Item_Insert", dbConnection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -146,7 +146,7 @@ namespace Database_Project
         /// <param name="isbn"></param>
         private void ISBNChecker(string isbn)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("ISBN_Check", dbConnection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
