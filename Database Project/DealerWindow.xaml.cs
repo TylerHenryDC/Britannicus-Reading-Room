@@ -31,7 +31,7 @@ namespace Database_Project
         string ISBN = "";
         string dealerItemType = "";
         string dealerPriceID = "";
-       
+
 
         public DealerWindow()
         {
@@ -41,7 +41,7 @@ namespace Database_Project
 
         private void DisplayDealers()
         {
-            
+
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC Dealer_Dashboard", dbConnection);
@@ -68,7 +68,7 @@ namespace Database_Project
             }
 
             dealerDataGrid.ItemsSource = dealerTable.DefaultView;
-           
+
         }
 
 
@@ -90,9 +90,9 @@ namespace Database_Project
                 itemDescription = row.Row[2].ToString();
                 itemCondition = row.Row[3].ToString();
                 dealerPrice = row.Row[4].ToString();
-               dealerItemType = row[5].ToString();
+                dealerItemType = row[5].ToString();
                 ISBN = row[6].ToString();
-               // dealerPriceID = row[7].ToString();
+                // dealerPriceID = row[7].ToString();
                 //   condition = row.Row[9].ToString();
                 //  quantity = row.Row[11].ToString();
                 //  string type = row.Value.ToString();
@@ -103,19 +103,19 @@ namespace Database_Project
                 //...
             }
         }
-         private void editButton_Click(object sender, RoutedEventArgs e)
+        private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
-            SqlCommand command = new SqlCommand("EXEC getItemID @ISBN = " + ISBN , dbConnection);
+            SqlCommand command = new SqlCommand("EXEC getItemID @ISBN = " + ISBN, dbConnection);
 
-           
+
             try
             {
                 dbConnection.Open();
                 //command.ExecuteNonQuery();
-                dealerPriceID =  command.ExecuteScalar().ToString();
+                dealerPriceID = command.ExecuteScalar().ToString();
             }
             catch (Exception ex)
             {
@@ -125,12 +125,12 @@ namespace Database_Project
             }
             finally
             {
-                
+
                 dbConnection.Close();
             }
 
 
-            DealerEditWindow ad = new DealerEditWindow(itemName, businessTitle, itemDescription, itemCondition, dealerPrice, dealerItemType, ISBN,dealerPriceID);
+            DealerEditWindow ad = new DealerEditWindow(itemName, businessTitle, itemDescription, itemCondition, dealerPrice, dealerItemType, ISBN, dealerPriceID);
             this.Close();
             ad.ShowDialog();
         }
@@ -142,14 +142,7 @@ namespace Database_Project
 
                 itemName = row.Row[0].ToString();
                 itemDescription = row.Row[1].ToString();
-                    //   condition = row.Row[9].ToString();
-                //  quantity = row.Row[11].ToString();
-                //  string type = row.Value.ToString();
-                // string condition = row.Cells[1].ToString();
-                //   string price = row.Value.ToString();
-                //string ISBN = row.Cells[1].ToString();
-                //  string Quantity = row.Cells[1].ToString();
-                //...
+
             }
         }
     }
