@@ -20,11 +20,19 @@ namespace Database_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initialize
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// On click searches for user name and password logs in if exists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void logInButton_Click(object sender, RoutedEventArgs e)
         {
             if(userTextBox.Text == "admin" && passwordTextBox.Text == "password")
@@ -38,6 +46,11 @@ namespace Database_Project
                 
         }
 
+        /// <summary>
+        /// On click close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Close();

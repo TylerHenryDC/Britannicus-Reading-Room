@@ -33,7 +33,7 @@ namespace Database_Project
         }
 
         /// <summary>
-        /// 
+        /// On click search if ISBN exists in the system, if not create new
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -84,12 +84,14 @@ namespace Database_Project
                 dbConnection.Close();
             }
 
+            //If item doesnt exist open add new item window
             if (exist == false)
             {
                 AddItemWindow at = new AddItemWindow(isbnTextBox.Text);
                 at.ShowDialog();
             }
 
+            //if item exists open add new inv window
             else if(exist == true)
             {
                 AddInventoryWindow av = new AddInventoryWindow(msg, itemID);
