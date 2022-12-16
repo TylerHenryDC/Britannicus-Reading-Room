@@ -42,6 +42,14 @@ namespace Database_Project
         {
             businessTitleInput = businessTitleUser.Text;
 
+<<<<<<< Updated upstream
+=======
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+            SqlConnection dbConnection = new SqlConnection(connectString);
+            SqlCommand command = new SqlCommand("dealerBusinessNameCheck", dbConnection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@DEALERBusinessTitle", businessTitleInput);
+>>>>>>> Stashed changes
 
 
             if (businessTitleInput == "")

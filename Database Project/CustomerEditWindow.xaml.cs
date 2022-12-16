@@ -44,7 +44,7 @@ namespace Database_Project
                 email = custEmail;
                 ID = custID;
                 
-                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
                 SqlConnection dbConnection = new SqlConnection(connectString);
                 SqlCommand command = new SqlCommand("Customer_Dashboard", dbConnection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;

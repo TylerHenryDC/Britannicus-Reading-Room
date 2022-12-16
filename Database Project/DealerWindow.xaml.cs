@@ -41,8 +41,13 @@ namespace Database_Project
 
         private void DisplayDealers()
         {
+<<<<<<< Updated upstream
 
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
+=======
+            
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+>>>>>>> Stashed changes
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC Dealer_Dashboard", dbConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
