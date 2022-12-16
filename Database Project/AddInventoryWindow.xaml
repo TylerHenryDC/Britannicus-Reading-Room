@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
-        Title="AddInventoryWindow" Height="250" Width="400">
+        Title="AddInventoryWindow" Height="270" Width="400">
     <Grid Margin="0,0,0,-16">
         <Label x:Name="conditionLabel" Content="Condition:" HorizontalAlignment="Left" Margin="71,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="quantityLabel" Content="Quantity:" HorizontalAlignment="Left" Margin="71,91,0,0" VerticalAlignment="Top"/>

@@ -21,25 +21,32 @@ namespace Database_Project
     /// </summary>
     public partial class InventoryWindow : Window
     {
-
+        //Varaible Declaration
         string invID = "";
         string condition = "";
         string quantity = "";
 
-
+        /// <summary>
+        /// Initialize Window, display entire inventory in datagrid
+        /// </summary>
         public InventoryWindow()
         {
             InitializeComponent();
             DisplayInv();
-            
+            editButton.IsEnabled = false;
+            inventoryDataGrid.IsReadOnly = true;
+
         }
-        
+
+        /// <summary>
+        /// Gets all inv items from database and displays them on a datagrid
+        /// </summary>
         private void DisplayInv()
         {
-           
+
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
-            SqlCommand command = new SqlCommand("EXEC Inventory_Basic", dbConnection);          
+            SqlCommand command = new SqlCommand("EXEC Inventory_Basic", dbConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
             DataTable inventoryTable = new DataTable();
@@ -64,25 +71,37 @@ namespace Database_Project
 
             inventoryDataGrid.ItemsSource = inventoryTable.DefaultView;
         }
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// on click Add new book to inv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             ISBNChecker ic = new ISBNChecker();
             ic.ShowDialog();
         }
 
+        /// <summary>
+        /// Edit currently selected book
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
             EditInventoryWindow ab = new EditInventoryWindow(invID, condition, quantity);
             ab.ShowDialog();
         }
 
+        /// <summary>
+        /// grabs item selection if new entry is clicked on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void inventoryDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            editButton.IsEnabled = true;
             foreach (DataRowView row in inventoryDataGrid.SelectedItems)
             {
 
@@ -98,6 +117,11 @@ namespace Database_Project
             }
         }
 
+        /// <summary>
+        /// Refreshes page if new items were added
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
             DisplayInv();

@@ -29,7 +29,11 @@ namespace Database_Project
         bool valid = true;
 
 
-        //On load, adds customer data if edit was chosen
+        /// <summary>
+        /// Adds customer chosens values to edit tect boxes so they can be edited
+        /// </summary>
+        /// <param name="custEmail"></param>
+        /// <param name="custID"></param>
         public CustomerEditWindow(string custEmail, string custID)
         {
             InitializeComponent();
@@ -79,17 +83,31 @@ namespace Database_Project
             }
         }
 
+
+        /// <summary>
+        /// On click close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
             
         }
 
+
+        /// <summary>
+        /// Checks if information is valid, if so checks whether or not the data is to be added to the databases or an existing entry is to be updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
+            //Checks if info is valud
             CheckValid();
             if (valid == true)
             {
+                //Either updates or adds customers
                 if (update == true)
                 {
                     CustomerUpdate();
@@ -101,6 +119,8 @@ namespace Database_Project
 
                 Close();
             }
+
+            //Show error is any
             else
             {
                 MessageBox.Show(error, "Error");
@@ -108,6 +128,9 @@ namespace Database_Project
             
         }
 
+        /// <summary>
+        /// Checks if information is valid
+        /// </summary>
         private void CheckValid()
         {
             valid = true;
@@ -159,6 +182,10 @@ namespace Database_Project
                 valid = false;
             }    
         }
+
+        /// <summary>
+        /// Updates customer based on given parameters
+        /// </summary>
         private void CustomerUpdate()
         {
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
@@ -196,6 +223,9 @@ namespace Database_Project
             }
         }
 
+        /// <summary>
+        /// Adds new customer with given parameters
+        /// </summary>
         private void CustomerAdd()
         {
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";

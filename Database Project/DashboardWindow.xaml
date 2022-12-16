@@ -11,7 +11,7 @@
         <Button x:Name="inventoryButton" Content="Inventory" HorizontalAlignment="Left" Margin="56,345,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="inventoryButton_Click"/>
         <Button x:Name="dealerButton" Content="Dealer Stock" HorizontalAlignment="Left" Margin="627,340,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="dealerButton_Click"/>
         <Button x:Name="customerButton" Content=" Customer&#xD;&#xA;Information" HorizontalAlignment="Center" Margin="0,345,0,0" VerticalAlignment="Top" Height="62" Width="108" Click="customerButton_Click"/>
-        <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Left" Margin="42,24,0,0" VerticalAlignment="Top" Height="49" Width="92"/>
+        <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Left" Margin="42,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="infoButton_Click"/>
         <Label Content="Britannicus Reading Room" HorizontalAlignment="Left" Margin="323,234,0,0" VerticalAlignment="Top" Height="42" Width="203"/>
         <Label Content="LOGO HERE" HorizontalAlignment="Left" Margin="357,138,0,0" VerticalAlignment="Top"/>
 

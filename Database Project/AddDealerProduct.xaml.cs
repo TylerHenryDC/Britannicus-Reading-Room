@@ -56,7 +56,7 @@ namespace Database_Project
             }
             else
             {
-                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\devan\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
                 SqlConnection dbConnection = new SqlConnection(connectString);
                 SqlCommand command = new SqlCommand("getDealerID", dbConnection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;

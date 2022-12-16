@@ -21,9 +21,16 @@ namespace Database_Project
     /// </summary>
     public partial class AddInventoryWindow : Window
     {
+        //varaible declaration
         string ID;
         string error = "";
         bool valid = true;
+
+        /// <summary>
+        /// Initial startup, add incoming varaibles to global varaibles
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="itemID"></param>
         public AddInventoryWindow(string msg, string itemID)
         {
             InitializeComponent();
@@ -31,11 +38,19 @@ namespace Database_Project
             msgLabel.Content = msg;
         }
 
+        /// <summary>
+        /// On Click close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Check if given information is valid, error if not
+        /// </summary>
         private void CheckValid()
         {
             valid = true;
@@ -68,13 +83,21 @@ namespace Database_Project
            
         }
 
+        /// <summary>
+        /// On click , if valid, add item to item table, otherwise send error
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
+            //Send error if info is not valid
             CheckValid();
             if (valid == false)
             {
                 MessageBox.Show(error, "Error");
             }
+
+            //If valid, add item to item table
             else
             {
                 string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";

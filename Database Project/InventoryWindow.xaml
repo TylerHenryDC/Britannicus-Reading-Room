@@ -9,15 +9,10 @@
 
 
     <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="706,39,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="searchTextBox" HorizontalAlignment="Left" Margin="586,41,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Search:" HorizontalAlignment="Left" Margin="533,37,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="126,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Content="Sort:" HorizontalAlignment="Left" Margin="75,37,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="inventoryDataGrid"  Margin="0,68,0,39" SelectionChanged="inventoryDataGrid_SelectionChanged"/>
         <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="557,415,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="editButton_Click"/>
         <Button x:Name="addButton" Content="Add New" HorizontalAlignment="Left" Margin="56,415,0,0" VerticalAlignment="Top" Height="34" Width="73" Click="addButton_Click"/>
-        <Button x:Name="refreshButton"  Content="Refresh" HorizontalAlignment="Left" Margin="343,8,0,0" VerticalAlignment="Top" Height="51" Width="90" Click="refreshButton_Click"/>
+        <Button x:Name="refreshButton"  Content="Refresh" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Height="51" Width="90" Click="refreshButton_Click"/>
     </Grid>
 
 

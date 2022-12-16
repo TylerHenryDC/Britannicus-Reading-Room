@@ -21,13 +21,22 @@ namespace Database_Project
     /// </summary>
     public partial class ISBNChecker : Window
     {
-
+        //Variable declaration
         string itemID = "";
+
+        /// <summary>
+        /// Initialize window
+        /// </summary>
         public ISBNChecker()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
 

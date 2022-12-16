@@ -28,6 +28,10 @@ namespace Database_Project
             showCollection(custID);
         }
 
+        /// <summary>
+        /// Exports chosen customers collection to visable data grid
+        /// </summary>
+        /// <param name="custID"></param>
         private void showCollection(string custID)
         {
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
@@ -60,21 +64,7 @@ namespace Database_Project
             customerCollectionDataGrid.ItemsSource = collectionTable.DefaultView;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
-        private void addButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow ab = new AddBookWindow();
-            ab.ShowDialog();
-        }
-
-        private void editButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow ab = new AddBookWindow();
-            ab.ShowDialog();
-        }
+       
     }
 }

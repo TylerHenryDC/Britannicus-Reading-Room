@@ -21,8 +21,16 @@ namespace Database_Project
     /// </summary>
     public partial class EditInventoryWindow : Window
     {
+        //Variable Declartion
         bool valid = true;
         string error = "";
+
+        /// <summary>
+        /// Initital components and add variables to global varaibles
+        /// </summary>
+        /// <param name="invID"></param>
+        /// <param name="condition"></param>
+        /// <param name="quantity"></param>
         public EditInventoryWindow(string invID, string condition, string quantity)
         {
             InitializeComponent();
@@ -33,10 +41,19 @@ namespace Database_Project
 
         }
 
+        /// <summary>
+        /// On click close the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+
+        /// <summary>
+        /// Check if quantity value is a valid
+        /// </summary>
         private void CheckValid()
         {
             valid = true;
@@ -47,6 +64,12 @@ namespace Database_Project
                 error = "Quantity Must Be A Valid Number";
             }
         }
+
+        /// <summary>
+        /// On click check if information is valid and if so, update the new quantity of the inv item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
             CheckValid();

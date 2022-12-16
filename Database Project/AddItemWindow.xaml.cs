@@ -21,11 +21,17 @@ namespace Database_Project
     /// </summary>
     public partial class AddItemWindow : Window
     {
+        //variable declaration
         string msg = "";
         string itemID = "";
         string isbn = "";
         string error = "";
         bool valid = true;
+
+        /// <summary>
+        /// Initial confif, set variables to incoming values
+        /// </summary>
+        /// <param name="incISBN"></param>
         public AddItemWindow(string incISBN)
         {
             InitializeComponent();
@@ -33,6 +39,9 @@ namespace Database_Project
             isbnTextBox.Text = incISBN;
         }
 
+        /// <summary>
+        /// Check if given information is valid for entry
+        /// </summary>
         private void CheckValid()
         {
             error = "";
@@ -70,15 +79,22 @@ namespace Database_Project
         }
 
 
-
+        /// <summary>
+        /// On submit button click, add new item to item table if valid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
+            //Check if valid if not showe error box
             CheckValid();
             if (valid == false)
             {
                 MessageBox.Show(error, "Error");
 
             }
+
+            //If valid add item to data base
             else
             {
                 string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
@@ -124,6 +140,10 @@ namespace Database_Project
             }
         }
 
+        /// <summary>
+        /// Check if ISBN exists in database 
+        /// </summary>
+        /// <param name="isbn"></param>
         private void ISBNChecker(string isbn)
         {
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
@@ -163,7 +183,11 @@ namespace Database_Project
 
         }
 
-
+        /// <summary>
+        /// On click, close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();

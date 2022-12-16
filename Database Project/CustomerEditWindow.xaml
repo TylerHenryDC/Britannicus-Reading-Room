@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
-        Title="CustomerEditWindow" Height="310" Width="317">
+        Title="CustomerEditWindow" Height="310" Width="330">
     <Grid>
         <Label Content="Customer First Name:" HorizontalAlignment="Left" Margin="8,22,0,0" VerticalAlignment="Top"/>
         <Label Content="Customer Last Name:" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>

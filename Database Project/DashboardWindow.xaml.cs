@@ -19,11 +19,19 @@ namespace Database_Project
     /// </summary>
     public partial class DashboardWindow : Window
     {
+        /// <summary>
+        /// Initialize Window
+        /// </summary>
         public DashboardWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Closes Window and opens login screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
             
@@ -33,24 +41,52 @@ namespace Database_Project
             
         }
 
+        /// <summary>
+        /// On click opens inventory window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void inventoryButton_Click(object sender, RoutedEventArgs e)
         {
             InventoryWindow iw = new InventoryWindow();
             iw.ShowDialog();
         }
 
+        /// <summary>
+        /// On click opens customer window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customerButton_Click(object sender, RoutedEventArgs e)
         {
             CustomerWindow cw = new CustomerWindow();
             cw.ShowDialog();
         }
 
+        /// <summary>
+        /// On Click opens dealer window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dealerButton_Click(object sender, RoutedEventArgs e)
         {
             DealerWindow dw = new DealerWindow();
             
             dw.ShowDialog();
 
+        }
+
+        /// <summary>
+        /// On click gives info on the other buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void infoButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Customer - Add, Edit or View a Customers Information\n" +
+                            "Dealer - Add, Edit or View Dealers and Dealers Product Information\n"+
+                            "Inventory - View Current Inventory or Add New Product\n" +
+                            "Log Out - Log Out of Your Current Session");    
         }
     }
 }

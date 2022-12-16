@@ -20,19 +20,36 @@ namespace Database_Project
     /// </summary>
     public partial class CustomerWindow : Window
     {
+        //Variable declarations
         string custID = "";
         string custEmail = null;
+
+        /// <summary>
+        /// Initialization
+        /// </summary>
         public CustomerWindow()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// On click sends selected customer info to be edited
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editCustButton_Click(object sender, RoutedEventArgs e)
         {
             CustomerEditWindow ce = new CustomerEditWindow(custEmail, custID);
             ce.ShowDialog();
         }
 
+
+        /// <summary>
+        /// Grabs customer information based on given email
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchCustButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -75,14 +92,23 @@ namespace Database_Project
 
             
         }
-    
 
+        /// <summary>
+        /// On click opens window to view selected customers collection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewColButton_Click(object sender, RoutedEventArgs e)
         {
             CustomerCollectionWindow cc = new CustomerCollectionWindow(custID);
             cc.ShowDialog();
         }
 
+        /// <summary>
+        /// On click opens window to add new customer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addCustButton_Click(object sender, RoutedEventArgs e)
         {
             CustomerEditWindow ce = new CustomerEditWindow(null, null);
