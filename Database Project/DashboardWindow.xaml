@@ -21,6 +21,12 @@
         <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="infoButton_Click"/>
         <Label Content="Britannicus Reading Room" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Height="42" Width="203" Grid.Column="1"/>
         <Image Grid.Column="1" Margin="131,66,318,198" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png"/>
+        <Label Content="Book Count:" HorizontalAlignment="Left" Margin="402,151,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" Width="105" Grid.Column="1"/>
+        <Label Content="Inventory Count:" Margin="402,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" Width="105" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label Content="Author Count:" HorizontalAlignment="Left" Margin="402,200,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" Width="105" Grid.Column="1"/>
+        <Label x:Name="BookCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,151,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="BookCountLabel_Copy" Content="00" HorizontalAlignment="Left" Margin="507,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="BookCountLabel_Copy1" Content="00" HorizontalAlignment="Left" Margin="507,201,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
 
     </Grid>
 </Window>
