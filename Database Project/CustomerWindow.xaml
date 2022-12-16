@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="CustomerWindow" Height="450" Width="400">
     <Grid Margin="0,0,-94,-16">
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/background.png"/>
+        </Grid.Background>
         <Button x:Name="editCustButton" Content="Edit" HorizontalAlignment="Left" Margin="27,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="editCustButton_Click"/>
         <Button x:Name="addCustButton" Content="Add Customer" HorizontalAlignment="Left" Margin="273,358,0,0" VerticalAlignment="Top" Height="47" Width="91" Click="addCustButton_Click"/>
         <Button x:Name="viewColButton" Content="View Collection" HorizontalAlignment="Left" Margin="158,358,0,0" VerticalAlignment="Top" Height="47" Width="92" Click="viewColButton_Click"/>

@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="AddItemWindow" Height="458" Width="463">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/background.png"/>
+        </Grid.Background>
         <Label x:Name="catagoryLabel" Content="Catagory:" HorizontalAlignment="Left" Margin="66,244,0,0" VerticalAlignment="Top"/>
         <Label x:Name="barcodeLabel" Content="Barcode:" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top"/>
         <Label x:Name="priceLabel" Content="Retail Price:" HorizontalAlignment="Left" Margin="66,319,0,0" VerticalAlignment="Top"/>

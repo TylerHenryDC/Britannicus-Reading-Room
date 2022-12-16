@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="AddDealerWindow" Height="325" Width="340">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Grid Margin="0,0,-52,0">
             <Grid.ColumnDefinitions>

@@ -6,14 +6,28 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Button x:Name="logOutButton"  Content="Log Out" HorizontalAlignment="Left" Margin="663,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="logOutButton_Click"/>
         <Button x:Name="inventoryButton" Content="Inventory" HorizontalAlignment="Left" Margin="56,345,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="inventoryButton_Click"/>
         <Button x:Name="dealerButton" Content="Dealer Stock" HorizontalAlignment="Left" Margin="627,340,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="dealerButton_Click"/>
         <Button x:Name="customerButton" Content=" Customer&#xD;&#xA;Information" HorizontalAlignment="Center" Margin="0,345,0,0" VerticalAlignment="Top" Height="62" Width="108" Click="customerButton_Click"/>
         <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Left" Margin="42,24,0,0" VerticalAlignment="Top" Height="49" Width="92"/>
-        <Label Content="Britannicus Reading Room" HorizontalAlignment="Left" Margin="323,234,0,0" VerticalAlignment="Top" Height="42" Width="203"/>
-        <Label Content="LOGO HERE" HorizontalAlignment="Left" Margin="357,138,0,0" VerticalAlignment="Top"/>
+        <Image Margin="317,101,308,163" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png"/>
+        <Label Content="Book Count:" HorizontalAlignment="Left" Margin="80,160,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label Content="Inventory Count:" HorizontalAlignment="Left" Margin="50,185,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label Content="Author Count:" HorizontalAlignment="Left" Margin="68,210,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label x:Name="BookCountLabel" Content="0" HorizontalAlignment="Left" Margin="170,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="AuthorCountLabel" Content="0" HorizontalAlignment="Left" Margin="170,210,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="InventoryCountLabel" Content="0" HorizontalAlignment="Left" Margin="170,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Book Count:" HorizontalAlignment="Left" Margin="666,164,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label Content="Inventory Count:" HorizontalAlignment="Left" Margin="636,189,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label Content="Author Count:" HorizontalAlignment="Left" Margin="654,214,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" FontStyle="Normal" FontSize="14" FontStretch="ExtraCondensed" IsEnabled="False"/>
+        <Label x:Name="BookCountLabel_Copy" Content="0" HorizontalAlignment="Left" Margin="756,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="AuthorCountLabel_Copy" Content="0" HorizontalAlignment="Left" Margin="756,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="InventoryCountLabel_Copy" Content="0" HorizontalAlignment="Left" Margin="756,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.523,-0.919" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
 </Window>

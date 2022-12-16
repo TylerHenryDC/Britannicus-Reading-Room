@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="DealerEditWindow" Height="391" Width="349">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/background.png"/>
+        </Grid.Background>
         <Grid>
             <Label Content="Title:" HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top"/>
             <Label Content="Description" HorizontalAlignment="Left" Margin="34,80,0,0" VerticalAlignment="Top"/>

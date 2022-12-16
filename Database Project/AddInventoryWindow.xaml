@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="AddInventoryWindow" Height="250" Width="400">
     <Grid Margin="0,0,0,-16">
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/background.png"/>
+        </Grid.Background>
         <Label x:Name="conditionLabel" Content="Condition:" HorizontalAlignment="Left" Margin="71,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="quantityLabel" Content="Quantity:" HorizontalAlignment="Left" Margin="71,91,0,0" VerticalAlignment="Top"/>
         <Label x:Name="priceLabel" Content="Sale Price:" HorizontalAlignment="Left" Margin="71,129,0,0" VerticalAlignment="Top"/>

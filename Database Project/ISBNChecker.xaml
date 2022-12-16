@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="ISBNChecker" Height="150" Width="494">
     <Grid Margin="0,0,-85,32">
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/background.png"/>
+        </Grid.Background>
         <Label Content="Please Enter In Product ISBN:&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="isbnTextBox" HorizontalAlignment="Left" Margin="209,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
         <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="412,31,0,0" VerticalAlignment="Top" Click="searchButton_Click"/>

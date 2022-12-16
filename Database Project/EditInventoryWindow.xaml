@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="EditInventoryWindow" Height="170" Width="400">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid Margin="0,0,0,-26">
         <Label Content="Please Enter In The Quantity For INV:" HorizontalAlignment="Left" Margin="37,15,0,0" VerticalAlignment="Top"/>
         <Label Content="Condition:" HorizontalAlignment="Left" Margin="177,41,0,0" VerticalAlignment="Top"/>

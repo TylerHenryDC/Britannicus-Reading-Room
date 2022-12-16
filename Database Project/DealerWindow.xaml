@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="DealerWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Grid>
             <Grid>
@@ -19,6 +22,7 @@
                     <DataGrid x:Name="dealerDataGrid" Margin="0,68,0,39" SelectionChanged="DealerDataGrid_SelectionChanged" />
                     <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="688,400,0,2" Width="76" Click="editButton_Click"/>
                     <Button x:Name="addNewButton" Content="Add New" HorizontalAlignment="Left" Margin="56,399,0,0" VerticalAlignment="Top" Height="34" Width="73" Click="addNewButton_Click"/>
+                    <Image Margin="370,2,368,372" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png" Width="62" Height="60"/>
                 </Grid>
 
 
