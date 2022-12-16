@@ -6,14 +6,21 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
-        <Button x:Name="logOutButton"  Content="Log Out" HorizontalAlignment="Left" Margin="663,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="logOutButton_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="39*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="logOutButton"  Content="Log Out" HorizontalAlignment="Left" Margin="487,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="logOutButton_Click" Grid.Column="1"/>
         <Button x:Name="inventoryButton" Content="Inventory" HorizontalAlignment="Left" Margin="56,345,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="inventoryButton_Click"/>
-        <Button x:Name="dealerButton" Content="Dealer Stock" HorizontalAlignment="Left" Margin="627,340,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="dealerButton_Click"/>
-        <Button x:Name="customerButton" Content=" Customer&#xD;&#xA;Information" HorizontalAlignment="Center" Margin="0,345,0,0" VerticalAlignment="Top" Height="62" Width="108" Click="customerButton_Click"/>
-        <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Left" Margin="42,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="infoButton_Click"/>
-        <Label Content="Britannicus Reading Room" HorizontalAlignment="Left" Margin="323,234,0,0" VerticalAlignment="Top" Height="42" Width="203"/>
-        <Label Content="LOGO HERE" HorizontalAlignment="Left" Margin="357,138,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="dealerButton" Content="Dealer Stock" HorizontalAlignment="Left" Margin="451,340,0,0" VerticalAlignment="Top" Height="62" Width="107" Click="dealerButton_Click" Grid.Column="1"/>
+        <Button x:Name="customerButton" Content=" Customer&#xD;&#xA;Information" HorizontalAlignment="Left" Margin="170,345,0,0" VerticalAlignment="Top" Height="62" Width="108" Click="customerButton_Click" Grid.Column="1"/>
+        <Button x:Name="infoButton" Content="Information" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Height="49" Width="92" Click="infoButton_Click"/>
+        <Label Content="Britannicus Reading Room" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Height="42" Width="203" Grid.Column="1"/>
+        <Image Grid.Column="1" Margin="131,66,318,198" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png"/>
 
     </Grid>
 </Window>

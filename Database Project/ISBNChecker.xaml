@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="ISBNChecker" Height="150" Width="494">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid Margin="0,0,-85,32">
         <Label Content="Please Enter In Product ISBN:&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="isbnTextBox" HorizontalAlignment="Left" Margin="209,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>

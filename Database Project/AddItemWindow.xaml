@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="AddItemWindow" Height="458" Width="463">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Label x:Name="catagoryLabel" Content="Catagory:" HorizontalAlignment="Left" Margin="66,244,0,0" VerticalAlignment="Top"/>
         <Label x:Name="barcodeLabel" Content="Barcode:" HorizontalAlignment="Left" Margin="66,281,0,0" VerticalAlignment="Top"/>

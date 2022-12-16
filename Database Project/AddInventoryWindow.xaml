@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="AddInventoryWindow" Height="270" Width="400">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid Margin="0,0,0,-16">
         <Label x:Name="conditionLabel" Content="Condition:" HorizontalAlignment="Left" Margin="71,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="quantityLabel" Content="Quantity:" HorizontalAlignment="Left" Margin="71,91,0,0" VerticalAlignment="Top"/>

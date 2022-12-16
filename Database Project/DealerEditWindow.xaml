@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="DealerEditWindow" Height="391" Width="349">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Grid>
             <Label Content="Title:" HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top"/>

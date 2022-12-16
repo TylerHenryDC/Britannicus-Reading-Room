@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Database_Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="246" Width="468">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/background.png"/>
+    </Window.Background>
     <Grid>
         <Label x:Name="userLabel" Content="Username:&#xD;&#xA;" HorizontalAlignment="Left" Margin="87,60,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="userTextBox" HorizontalAlignment="Left" Margin="158,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197"/>
