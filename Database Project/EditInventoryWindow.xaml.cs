@@ -77,7 +77,7 @@ namespace Database_Project
                 MessageBox.Show(error, "Error");
             }
             else {
-                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\source\\repos\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
                 SqlConnection dbConnection = new SqlConnection(connectString);
                 SqlCommand command = new SqlCommand("Quantity_Update", dbConnection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;

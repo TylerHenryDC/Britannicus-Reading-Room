@@ -34,7 +34,7 @@ namespace Database_Project
         /// <param name="custID"></param>
         private void showCollection(string custID)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom (1).mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("Customer_Collection", dbConnection);
             command.CommandType = System.Data.CommandType.StoredProcedure;

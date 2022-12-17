@@ -107,7 +107,7 @@ namespace Database_Project
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
 
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC getItemID @ISBN = " + ISBN, dbConnection);
 

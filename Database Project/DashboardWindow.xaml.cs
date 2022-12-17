@@ -88,6 +88,8 @@ namespace Database_Project
             var bookcount = "";
             // BookCountLabel.Content = bookcount;
 
+
+
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC  BookCount", dbConnection);
@@ -119,14 +121,64 @@ namespace Database_Project
 
 
             // getting inventory count from the stored procedure
-            var inventorycount = "12";
-            InventoryCountLabel.Content = inventorycount;
+            var inventorycount = "";
+            SqlConnection dbConnection1 = new SqlConnection(connectString);
+            SqlCommand command1 = new SqlCommand("EXEC  InventoryCount", dbConnection1);
+
+
+
+            try
+            {
+                dbConnection1.Open();
+                //command.ExecuteNonQuery();
+                InventoryCountLabel.Content = command1.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                // If there is an error, re-throw the exception to be handled by the presentation tier.
+                // (You could also just do error messaging here but that's not as nice.)
+                throw ex;
+            }
+            finally
+            {
+
+
+
+                dbConnection1.Close();
+            }
+
+
+
+
 
 
 
             // getting author count from the stored procedure
-            var authorcount = "5";
-            AuthorCountLabel.Content = authorcount;
+            var authorcount = "";
+            SqlConnection dbConnection2 = new SqlConnection(connectString);
+            SqlCommand command2 = new SqlCommand("EXEC  AuthorCount", dbConnection2);
+
+
+
+            try
+            {
+                dbConnection2.Open();
+                //command.ExecuteNonQuery();
+                AuthorCountLabel.Content = command2.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                // If there is an error, re-throw the exception to be handled by the presentation tier.
+                // (You could also just do error messaging here but that's not as nice.)
+                throw ex;
+            }
+            finally
+            {
+
+
+
+                dbConnection2.Close();
+            }
 
 
 
