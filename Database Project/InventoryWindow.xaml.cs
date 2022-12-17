@@ -43,13 +43,9 @@ namespace Database_Project
         /// </summary>
         private void DisplayInv()
         {
-<<<<<<< Updated upstream
 
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
-=======
-           
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
->>>>>>> Stashed changes
+
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("EXEC Inventory_Basic", dbConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);

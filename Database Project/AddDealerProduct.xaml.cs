@@ -50,27 +50,20 @@ namespace Database_Project
             itemType = AddItemType.Text;
             ISBN = AddISBN.Text;
 
-<<<<<<< Updated upstream
+
             if (itemNameInput == "" || itemDescription == "" || dealersPrice == "" || itemType == "" || ISBN == "")
             {
                 MessageBox.Show("Error ! Empty Input is not allowed.");
             }
-            else
-=======
+            else { 
+
             string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
             SqlCommand command = new SqlCommand("getDealerID", dbConnection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@DealerBusinessTitle", businessTitleProductAdd);
 
-            try
->>>>>>> Stashed changes
-            {
-                string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\rudeb\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
-                SqlConnection dbConnection = new SqlConnection(connectString);
-                SqlCommand command = new SqlCommand("getDealerID", dbConnection);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@DealerBusinessTitle", businessTitleProductAdd);
+           
 
                 try
                 {
@@ -183,8 +176,9 @@ namespace Database_Project
 
                 dw1.ShowDialog();
 
+                }
             }
 
         }
     }
-}
+
