@@ -104,7 +104,7 @@ namespace Database_Project
 
         public void addDealer(string businessTitleInput)
         {
-            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\Users\\devan\\Downloads\\Database Project\\Database Project\\Database Project\\BritannicusReadingRoom-3.mdf\"; Integrated Security = True;";
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
             SqlConnection dbConnection = new SqlConnection(connectString);
 
             SqlCommand command = new SqlCommand("addDealer", dbConnection);

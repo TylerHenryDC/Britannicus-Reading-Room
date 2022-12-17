@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -76,22 +78,57 @@ namespace Database_Project
             dw.ShowDialog();
 
         }
-        /// <summary>
-        /// Populating fields on load
-        /// </summary>
         private void onLoad()
         {
+
+
+
+
             // getting book count from the stored procedure
-            var bookcount = "10";
-            BookCountLabel.Content = bookcount;
+            var bookcount = "";
+            // BookCountLabel.Content = bookcount;
+
+            string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
+            SqlConnection dbConnection = new SqlConnection(connectString);
+            SqlCommand command = new SqlCommand("EXEC  BookCount", dbConnection);
+
+
+
+
+            try
+            {
+                dbConnection.Open();
+                //command.ExecuteNonQuery();
+                BookCountLabel.Content = command.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                // If there is an error, re-throw the exception to be handled by the presentation tier.
+                // (You could also just do error messaging here but that's not as nice.)
+                throw ex;
+            }
+            finally
+            {
+
+
+
+                dbConnection.Close();
+            }
+
+
+
 
             // getting inventory count from the stored procedure
             var inventorycount = "12";
-            InventoryCountLabel.Content= inventorycount;
+            InventoryCountLabel.Content = inventorycount;
+
+
 
             // getting author count from the stored procedure
             var authorcount = "5";
             AuthorCountLabel.Content = authorcount;
+
+
 
         }
 
