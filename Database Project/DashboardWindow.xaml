@@ -27,6 +27,7 @@
         <Label x:Name="BookCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,151,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="InventoryCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
         <Label x:Name="AuthorCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,201,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+        <Image Grid.Column="1" Margin="104,32,280,200" Stretch="Fill" Source="/img/logo.png"/>
 
     </Grid>
 </Window>
