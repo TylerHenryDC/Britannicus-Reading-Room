@@ -25,8 +25,8 @@
         <Label Content="Inventory Count:" Margin="402,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" Width="105" HorizontalAlignment="Left" Grid.Column="1"/>
         <Label Content="Author Count:" HorizontalAlignment="Left" Margin="402,200,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" FontWeight="Bold" Width="105" Grid.Column="1"/>
         <Label x:Name="BookCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,151,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="BookCountLabel_Copy" Content="00" HorizontalAlignment="Left" Margin="507,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="BookCountLabel_Copy1" Content="00" HorizontalAlignment="Left" Margin="507,201,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="InventoryCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,178,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="AuthorCountLabel" Content="00" HorizontalAlignment="Left" Margin="507,201,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
 
     </Grid>
 </Window>

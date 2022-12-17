@@ -25,6 +25,7 @@ namespace Database_Project
         public DashboardWindow()
         {
             InitializeComponent();
+            onLoad();
         }
 
         /// <summary>
@@ -73,6 +74,24 @@ namespace Database_Project
             DealerWindow dw = new DealerWindow();
             
             dw.ShowDialog();
+
+        }
+        /// <summary>
+        /// Populating fields on load
+        /// </summary>
+        private void onLoad()
+        {
+            // getting book count from the stored procedure
+            var bookcount = "10";
+            BookCountLabel.Content = bookcount;
+
+            // getting inventory count from the stored procedure
+            var inventorycount = "12";
+            InventoryCountLabel.Content= inventorycount;
+
+            // getting author count from the stored procedure
+            var authorcount = "5";
+            AuthorCountLabel.Content = authorcount;
 
         }
 
