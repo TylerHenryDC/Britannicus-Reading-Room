@@ -10,11 +10,13 @@
         <ImageBrush ImageSource="/img/background.png"/>
     </Window.Background>
     <Grid>
-        <Label x:Name="userLabel" Content="Username:&#xD;&#xA;" HorizontalAlignment="Left" Margin="87,60,0,0" VerticalAlignment="Top"/>
+        <Image Margin="160,10,133,50" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png"/>
+        <Label x:Name="userLabel" Content="Username:&#xA;" HorizontalAlignment="Left" Margin="87,60,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="userTextBox" HorizontalAlignment="Left" Margin="158,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197"/>
         <Label x:Name="passwordLabel"  Content="Password:" HorizontalAlignment="Left" Margin="89,0,0,0" VerticalAlignment="Center"/>
         <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="158,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="197"/>
         <Button x:Name="logInButton"  Content="Log In" HorizontalAlignment="Left" Margin="58,148,0,0" VerticalAlignment="Top" Height="47" Width="93" Click="logInButton_Click"/>
         <Button x:Name="closeButton" Content="Close" HorizontalAlignment="Left" Margin="323,148,0,0" VerticalAlignment="Top" Height="47" Width="93" Click="closeButton_Click"/>
+        <Label Content="&quot;The information contained in this database is provided as a service to users and is intended for informational purposes only. The owner and operator of this database do not guarantee the accuracy or completeness of the information provided and are not responsible for any errors or omissions. Use of this database is at your own risk.&quot;" HorizontalAlignment="Left" Margin="8,207,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="8" Height="18" Width="449"/>
     </Grid>
 </Window>
