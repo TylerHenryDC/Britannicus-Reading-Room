@@ -23,9 +23,22 @@ namespace Database_Project
     public partial class DealerEditWindow : Window
     {
 
-
+        /// <summary>
+        ///  variable declared for storing the price
+        /// </summary>
         string dealerPriceIDFinal = "";
 
+        /// <summary>
+        /// initializes the window with all other prior info coming from prev screen to edit
+        /// </summary>
+        /// <param name="itemName"></param>
+        /// <param name="businessTitle"></param>
+        /// <param name="itemDescription"></param>
+        /// <param name="itemCondition"></param>
+        /// <param name="dealerPrice"></param>
+        /// <param name="dealerItemType"></param>
+        /// <param name="ISBN"></param>
+        /// <param name="dealerPriceID"></param>
         public DealerEditWindow(string itemName, string businessTitle, string itemDescription, string itemCondition, string dealerPrice, string dealerItemType, string ISBN, string dealerPriceID)
         {
             InitializeComponent();
@@ -39,22 +52,31 @@ namespace Database_Project
 
         }
 
-
+        /// <summary>
+        /// on this button click close the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// click on this to confirm and add the data to database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Confirm(object sender, RoutedEventArgs e)
         {
-
+            //if any of the field is kept blank show the error
             if (titleItem.Text.Length == 0 || titleDescription.Text.Length == 0 || titlePrice.Text.Length == 0 || titleType.Text.Length == 0 || titleISBN.Text.Length == 0 || dealerPriceIDFinal == "")
             {
                 MessageBox.Show("Can't process the empty value");
             }
             else
             {
+                // else open the connection, run the stored procedure and add the data to database to add the edited data to database
                 string connectString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = \"C:\\src\\BritannicusReadingRoom.mdf\"; Integrated Security = True;";
                 SqlConnection dbConnection = new SqlConnection(connectString);
                 SqlCommand command = new SqlCommand("DealerItemUpdate", dbConnection);
@@ -70,6 +92,7 @@ namespace Database_Project
                 try
                 {
                     dbConnection.Open();
+                    // executes the query
                     command.ExecuteNonQuery();
 
                 }
@@ -85,10 +108,11 @@ namespace Database_Project
                     dbConnection.Close();
 
                 }
+                // closes the window
                 Close();
-
+                // opens (calls) the dealers window
                 DealerWindow dw1 = new DealerWindow();
-
+                // shows the dealers window
                 dw1.ShowDialog();
 
             }
